@@ -1,8 +1,8 @@
-# Speed Dating Match Prediction Agent 💘🤖
+# Speed Dating Match Prediction Agent 
 
 This repository contains a Jupyter Notebook project that builds an autonomous AI Agent to predict match probabilities from speed dating data. The agent is powered by **LangGraph**, **LangChain**, and **OpenAI**, and automates a complete Machine Learning pipeline using a ReAct architecture.
 
-## 🌟 Project Overview
+## Project Overview
 
 Traditional Machine Learning pipelines require manual execution of steps like data cleaning, feature selection, and model training. This project flips that paradigm by introducing an **Agentic Workflow**.
 
@@ -11,7 +11,7 @@ Using LangGraph, we provide an AI agent with a set of "tools" and a high-level o
 
 The agent autonomously reasons through the problem, deciding which tools to call, in what order, and how to pass state between them to arrive at a final evaluating Score (ROC AUC) for the trained XGBoost model.
 
-## ✨ Key Features
+## Key Features
 
 1. **Exploratory Data Analysis (EDA)**: Initial programmatic look into the dataset shape, missing arrays, byte string prevalence, and target (match) distribution.
 2. **Autonomous Data Cleaning Tool**: Automatically drops data-leakage columns (`decision`, `decision_o`), fixes byte-string encoding issues, and imputes missing numeric data. 
@@ -19,7 +19,7 @@ The agent autonomously reasons through the problem, deciding which tools to call
 4. **Machine Learning Model Tool**: Trains an `XGBoost` classifier to predict the probability of a match rather than a binary yes/no, evaluating reliability via the ROC AUC metric.
 5. **LangGraph State Management**: Employs a cyclical graph architecture that allows the LLM to recursively think, act, and observe until the pipeline is complete.
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 * **[LangGraph](https://python.langchain.com/docs/langgraph/) / LangChain**: For building the stateful, multi-actor agent workflow.
 * **[OpenAI API](https://openai.com/)**: `gpt-4o-mini` serves as the core reasoning engine.
@@ -27,7 +27,7 @@ The agent autonomously reasons through the problem, deciding which tools to call
 * **Scikit-Learn**: For preprocessing (LabelEncoder, SimpleImputer) and Feature Selection (RFE).
 * **XGBoost**: Fast, gradient-boosted decision trees for the final predictive model.
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -62,11 +62,11 @@ Ensure you have Python 3.9+ installed.
 
 Open `Couple Matching Probability.ipynb` using Jupyter Notebook, JupyterLab, or VS Code, and run the cells sequentially from top to bottom. The notebook will automatically download the dataset from an IBM Cloud object storage bucket if it isn't present locally.
 
-## 📊 Dataset Information
+## Dataset Information
 
 The data comes from the well-known [Speed Dating Dataset](https://www.kaggle.com/datasets/ulrikthygepedersen/speed-dating/data) by Ulrik Thyge Pedersen. It represents 4-minute speed dates where participants rated each other on various attributes (attractiveness, sincerity, intelligence, fun, ambition, shared interests).
 
-## 💡 Future Extensions
+## Future Extensions
 
 This proof-of-concept demonstrates how single-instruction AI workflows can manage ML pipelines. The same structure can be adapted for:
 * Hyperparameter tuning automation
